@@ -63,11 +63,6 @@
                             <li class="nav-item active">
                                 <a class="nav-link borda-soft" href="perfil.html">Perfil</a>
                             </li>
-                            <li class="nav-item">
-                                <button class="btn btn-primary" type="button" href="#" style="font-family: Source Serif Pro;">
-                                    Carrinho
-                                </button>
-                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -90,7 +85,13 @@
             </div>
             <hr />
             <div class="row" style="align-items:center; padding-bottom:10px;padding-left:10px;">
-                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150" alt="User" />
+                <div id="avatar-container" style="position: relative; cursor: pointer;">
+                    <label for="avatar-input" id="avatar-label">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150" height="150" alt="User" id="avatar-image" style="object-fit: cover;">
+                    </label>
+                    <input type="file" id="avatar-input" style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;" accept="image/*" onchange="handleFileSelect(this)">
+                    <span id="change-avatar-text">Mudar Imagem</span>
+                </div>                   
                 <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;">Raquel Elisângela</h3>
                 <a href="#" id="editUsername">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -212,6 +213,7 @@
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script src="js/avatar.js"></script>
     <script>
         function myFunction() {
             alert("Não Disponivel!");

@@ -86,10 +86,11 @@
                                 <a class="nav-link borda-soft" href="perfil.html">Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn btn-primary" type="button" href="#" style="font-family: Source Serif Pro;">
-                                    Carrinho
+                                <button class="btn btn-primary" type="button" style="font-family: Source Serif Pro;" data-toggle="modal" data-target="#cartModal">
+                                    <i class="fa fa-shopping-basket" ></i>
+                                    <span id="cartCounter" class="badge badge-danger">0</span> <!-- Counter element -->
                                 </button>
-                            </li>
+                            </li>                            
                         </ul>
                     </div>
                 </nav>
@@ -113,18 +114,21 @@
                         <div class="inner-main-header">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <select class="custom-select custom-select-sm w-100">
-                                        <option selected="">Recomendado</option>
-                                        <option value="1">Preço Ascendente</option>
-                                        <option value="2">Preço Descendente</option>
-                                        <option value="3">Rating</option>
+                                    <select class="custom-select custom-select-sm w-100" id="sortingSelect">
+                                      <option value="Recomendado">Recomendado</option>
+                                      <option value="Preço Ascendente">Preço Ascendente</option>
+                                      <option value="Preço Descendente">Preço Descendente</option>
+                                      <option value="Rating">Rating</option>
                                     </select>
-                                </div>
+                                </div>                                  
                                 <div class="col-md-10">
-                                    <span class="input-icon input-icon-sm w-100">
-                                        <input type="text" class="form-control form-control-sm bg-gray-200 border-gray-200 shadow-none mb-4 mt-4" placeholder="Pesquisar por nome, ingrediente ou confeiteiro..." />
+                                    <span class="input-icon input-icon-sm w-100" id="searchButton">
+                                      <input type="text" class="form-control form-control-sm bg-gray-200 border-gray-200 shadow-none mb-4 mt-4" placeholder="Pesquisar por nome, ingrediente ou confeiteiro..." id="searchInput" />
                                     </span>
                                 </div>
+                                <!--<div class="col-md-2">
+                                    <button class="btn btn-primary" id="searchButton">Buscar</button>
+                                </div>-->                              
                             </div>
                         </div>
                         <!-- /Inner main header -->
@@ -136,11 +140,11 @@
         <div class="container" style="margin-top:20px;">
             <div class="row">
                 <div class="d-flex justify-content-center flex-wrap">
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(200,0,0,.8); border: 2px solid rgba(200,0,0,.5);">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="32.00" data-price-max="85.00" data-rating="9" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(200,0,0,.8); border: 2px solid rgba(200,0,0,.5);">
                         <img class="card-img-top" src="images/red-velvet.jpg" alt="Bolo Red Velvet">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Red Velvet</h5>
-                            <h6 class="card-title">Preço: €38.00 – €85.00</h6>
+                            <h6 class="card-title">Preço: €32.00 – €85.00</h6>
                             <p>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -153,10 +157,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">Artur Ramalho</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Red Velvet" data-price="32.00">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 106, 0, 0.8); border: 2px solid rgba(255, 106, 0, 0.5);">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="37.20" data-price-max="37.20" data-rating="6" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 106, 0, 0.8); border: 2px solid rgba(255, 106, 0, 0.5);">
                         <img class="card-img-top" src="images/cenoura-chocolate.webp" alt="Bolo de Cenoura com Chocolate">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Bolo de Cenoura com Chocolate</h5>
@@ -171,10 +175,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">Reinaldo Silva</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Cenoura com Chocolate" data-price="37.20">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 216, 0, 0.8); border: 2px solid rgba(255, 216, 0, 0.5);">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="9.80" data-price-max="9.80" data-rating="7" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 216, 0, 0.8); border: 2px solid rgba(255, 216, 0, 0.5);">
                         <img class="card-img-top" src="images/limao.jpeg" alt="Bolo de Limão Siciliano">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Bolo de Limão Siciliano</h5>
@@ -190,10 +194,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">Raquel Elisângela</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Limão Siciliano" data-price="9.80">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(146, 100, 56, 0.8); border: 2px solid rgba(146, 100, 56,0.5);">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="7.90" data-price-max="7.90" data-rating="7" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(146, 100, 56, 0.8); border: 2px solid rgba(146, 100, 56,0.5);">
                         <img class="card-img-top" src="images/coco-cremoso.webp" alt="Bolo de Coco Cremoso">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Bolo de Coco Cremoso</h5>
@@ -209,10 +213,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">Geisa Silvestre</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Coco Cremoso" data-price="7.90">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(65, 25, 0, 0.8); border: 2px solid rgba(65, 25, 0,0.6);">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="34.50" data-price-max="34.50" data-rating="10" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(65, 25, 0, 0.8); border: 2px solid rgba(65, 25, 0,0.6);">
                         <img class="card-img-top" src="images/chocolate.jpg" alt="Bolo de Chocolate">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Encanto de Chocolate Nebuloso</h5>
@@ -229,10 +233,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">António José</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Encanto de Chocolate Nebuloso" data-price="34.50">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-                    <div class="card mr-5 mb-5" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(144, 120, 150, 0.8); border: 2px solid rgba(144, 120, 150,0.6); ">
+                    <div class="card mr-5 mb-5 cake-card" data-price-min="39.20" data-price-max="90.50" data-rating="9" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(144, 120, 150, 0.8); border: 2px solid rgba(144, 120, 150,0.6); ">
                         <img class="card-img-top" src="images/maracuja.webp" alt="Bolo de Maracujá Dourado">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Éxtase de Maracujá Dourado</h5>
@@ -249,7 +253,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px">Joaquina Antunes</h6>
                             </div>
-                            <a href="mycake4you.html" class="btn btn-primary mt-1">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Éxtase de Maracujá Dourado" data-price="39.20">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                 </div>
@@ -276,6 +280,25 @@
         </ul>
     </section>
     <!-- end why section -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color:#FFF0F2">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items"></ul>
+                </div>
+                <div class="modal-footer">
+                    <div id="total-price" class="text-center mb-3">Total: €0.00</div>
+                    <button class="btn btn-success btn-lg btn-block" id="checkoutButton">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- footer section -->
     <footer class="footer_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
         <div class="container">
@@ -352,7 +375,7 @@
         </div>
     </footer>
     <!-- footer section -->
-    <!-- jQery -->
+    <!-- jQuery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
@@ -360,10 +383,14 @@
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/ordernarbolos.js"></script>
+    <script src="js/pesquisabolos.js"></script>
     <script>
         function myFunction() {
             alert("Não Disponivel!");
         }
     </script>
+    <script src="js/carrinho.js"></script>
 </body>
 </html>

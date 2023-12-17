@@ -1152,7 +1152,7 @@ form input[type="submit"]:focus {
     background-image: url(images/logo-mycake4you-rotate.png);
     background-attachment: fixed;
     background-repeat: space repeat-x;
-    background-size: 15%;
+    background-size: 250px;
     background-position: 2% 80%;
 }
 .borda {
@@ -1160,4 +1160,48 @@ form input[type="submit"]:focus {
 }
 .borda-soft {
     text-shadow: 2px 2px 10px #000000bd;
+}
+
+#username {
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 40px;
+  font-size: 3rem;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+#username:hover {
+  color: #E83D95; /* Change the color on hover */
+}
+
+#avatar-container {
+  position: relative;
+  cursor: pointer;
+}
+
+#avatar-container:hover #avatar-image {
+  filter: brightness(50%); /* Adjust the brightness as needed */
+  transition: filter 0.3s ease; /* Add a smooth transition effect */
+}
+
+#change-avatar-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+  display: none;
+}
+
+#avatar-container:hover #change-avatar-text {
+  display: block;
+  text-align:center;
+  padding:50px;
+}
+
+/* Hide the default file input button */
+
+#avatar-input {
+  display: none;
 }
