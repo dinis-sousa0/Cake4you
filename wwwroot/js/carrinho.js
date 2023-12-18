@@ -2,8 +2,8 @@ $(document).ready(function () {
     // Initialize an empty cart array
     var cart = [];
 
-    // Listen for click events on "Adicionar ao Carrinho" buttons
-    $(".add-to-cart").on("click", function (e) {
+    // Delegate click events on "Adicionar ao Carrinho" buttons
+    $(".d-flex.justify-content-center.flex-wrap").on("click", ".add-to-cart", function (e) {
         e.preventDefault();
 
         // Get the cake information from the clicked button
@@ -27,38 +27,37 @@ $(document).ready(function () {
 
         // Update the shopping cart display
         updateCartDisplay();
-
-        // Event listener for remove buttons
-        $("#cart-items").on("click", ".remove-from-cart", function () {
-            var indexToRemove = $(this).data("index");
-            cart.splice(indexToRemove, 1);
-            updateCartDisplay();
-        });
     });
-    
+
+    // Delegate click events for remove buttons
+    $("#cart-items").on("click", ".remove-from-cart", function () {
+        var indexToRemove = $(this).data("index");
+        cart.splice(indexToRemove, 1);
+        updateCartDisplay();
+    });
 
     // Function to update the shopping cart display
     function updateCartDisplay() {
         var cartItemsContainer = $("#cart-items");
         var totalContainer = $("#total-price");
         var cartCounter = $("#cartCounter"); // Counter element
-        
+
         cartItemsContainer.empty();
-    
+
         cart.forEach(function (item, index) {
             cartItemsContainer.append(
                 "<li>" +
-                    item.name +
-                    " (x" +
-                    item.quantity +
-                    ") - €" +
-                    (item.price * item.quantity).toFixed(2) +
-                    " <button class='btn btn-sm btn-danger remove-from-cart fa fa-trash' data-index='" +
-                    index +
-                    "'></button></li>"
+                item.name +
+                " (x" +
+                item.quantity +
+                ") - €" +
+                (item.price * item.quantity).toFixed(2) +
+                " <button class='btn btn-sm btn-danger remove-from-cart fa fa-trash' data-index='" +
+                index +
+                "'></button></li>"
             );
         });
-    
+
         var totalPrice = calculateTotalPrice();
         totalContainer.text("Total: €" + totalPrice.toFixed(2));
 
