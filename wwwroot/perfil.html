@@ -75,12 +75,12 @@
         <div class="container-fluid" style="width:75%">
             <div class="row">
                 <div class="col-lg-10">
-                    <h3 style="color: #453A29; margin-bottom: 40px; text-align:left">
+                    <h3 style="color: #453A29; margin-bottom: 30px; text-align:left; font-size:3.5rem">
                         O que queres fazer?
                     </h3>
                 </div>
                 <div class="col-lg-2">
-                    <a href="xxx" class="btn btn-primary mb-auto">Verificar Utilizador</a>
+                    <a href="#" class="btn btn-primary mb-auto">Verificar Utilizador</a>
                 </div>
             </div>
             <hr />
@@ -103,7 +103,14 @@
                 <input type="text" id="editUsernameInput" style="display:none;">
             </div>
             <div class="row" style="align-items:center; padding-top:10px; padding-bottom:0px;padding-left:10px;">
-                <h4>Localização: R. de Sá, Aveiro, Portugal</h4>
+                <h4 style="text-align: right; margin-left:20px; margin-right:40px;">Localização:<span id="Location"> R. de Sá, Aveiro, Portugal</span></h4>
+                <a href="#" id="editLocation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                    </svg>
+                </a>
+                <input type="text" id="editLocationInput" style="display:none;">
             </div>
             <hr />
             <div class="container-fluid" style="padding-top:25px;">
@@ -237,6 +244,31 @@
         document.getElementById('editUsernameInput').addEventListener('blur', function () {
             var usernameElement = document.getElementById('username');
             var usernameInput = document.getElementById('editUsernameInput');
+
+            // Atualizar o texto e ocultar o campo de entrada
+            usernameElement.innerText = usernameInput.value;
+            usernameElement.style.display = 'inline-block';
+            usernameInput.style.display = 'none';
+        });
+    </script>
+    <script>
+        document.getElementById('editLocation').addEventListener('click', function () {
+            var usernameElement = document.getElementById('Location');
+            var usernameInput = document.getElementById('editLocationInput');
+
+            // Exibir o campo de entrada e ocultar o texto
+            usernameInput.style.display = 'inline-block';
+            usernameInput.value = usernameElement.innerText;
+            usernameElement.style.display = 'none';
+
+            // Definir o foco no campo de entrada
+            usernameInput.focus();
+        });
+
+        // Adicionar um manipulador de eventos ao campo de entrada para salvar as alterações
+        document.getElementById('editLocationInput').addEventListener('blur', function () {
+            var usernameElement = document.getElementById('Location');
+            var usernameInput = document.getElementById('editLocationInput');
 
             // Atualizar o texto e ocultar o campo de entrada
             usernameElement.innerText = usernameInput.value;

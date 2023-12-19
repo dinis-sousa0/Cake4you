@@ -1205,3 +1205,7 @@ form input[type="submit"]:focus {
 #avatar-input {
   display: none;
 }
+
+.bg-primary {
+  background-color: #E83D95 !important;
+}
