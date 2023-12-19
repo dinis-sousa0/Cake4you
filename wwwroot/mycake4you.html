@@ -294,7 +294,7 @@
                 </div>
                 <div class="modal-footer">
                     <div id="total-price" class="text-center mb-3">Total: €0.00</div>
-                    <button class="btn btn-success btn-lg btn-block" id="checkoutButton">Checkout</button>
+                    <button class="btn btn-success btn-lg btn-block" id="checkoutButton" onclick="redirectToCheckout()">Checkout</button>
                 </div>
             </div>
         </div>
@@ -386,6 +386,16 @@
     <script src="js/carrinho.js"></script>
     <script src="js/ordernarbolos.js"></script>
     <script src="js/pesquisabolos.js"></script>
+    <script>
+        function redirectToCheckout() {
+            // Get the total price from the total price element
+            var totalPriceElement = document.getElementById("total-price");
+            var totalPrice = totalPriceElement.textContent.replace("Total: €", "");
+    
+            // Redirect to the checkout page with the total value as a parameter
+            window.location.href = "checkout.html?total=" + totalPrice;
+        }
+    </script>    
     <script>
         function myFunction() {
             alert("Não Disponivel!");

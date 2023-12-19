@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/c4yicon.png" type="">
+    <title>Perfil Cake4You</title>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- DC Payment Icons CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/alerta.css" rel="stylesheet" />
+    <style>
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #E83D95;
+            border-color: #E83D95;
+        }
+
+        .btn {
+            border-radius: 0.8rem;
+        }
+    </style>
+</head>
+<body class="sub_page">
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 2px rgba(0,0,0,.8);">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html"><img width="250" src="images/cake4you.png" alt="#" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <span class="dc_payment_icons_glossy_50 dc_visa_glossy" title="Visa"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_mastercard_glossy" title="Mastercard"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_americanexpress_glossy" title="American Express"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_discover_glossy" title="Discover"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_paypal_glossy" title="PayPal"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_maestro_glossy" title="Maestro"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_cirrus_glossy" title="Cirrus"></span>
+                            <span class="dc_payment_icons_glossy_50 dc_visaelectron_glossy" title="Visa Electron"></span>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+    <!-- why section -->
+    <section class="why_section layout_padding" style="background-color: #FFF0F2">
+        <div class="container">
+            <div class="row">
+                <div class="col-75">
+                  <div class="container">
+                    <form action="/action_page.php">
+              
+                      <div class="row">
+                        <div class="col-50">
+                          <h3>Endereço de faturação</h3>
+                          <label for="fname"><i class="fa fa-user"></i> Nome Completo</label>
+                          <input type="text" id="fname" name="firstname" placeholder="João Félix">
+                          <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                          <input type="text" id="email" name="email" placeholder="anotnio@example.com">
+                          <label for="adr"><i class="fa fa-address-card-o"></i> Endereço</label>
+                          <input type="text" id="adr" name="address" placeholder="Rua Dr. Frederico Ramos Mendes">
+                          <label for="city"><i class="fa fa-institution"></i> Cidade</label>
+                          <input type="text" id="city" name="city" placeholder="Portimão">
+              
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="state">Distrito</label>
+                              <input type="text" id="distrito" name="distrito" placeholder="Faro">
+                            </div>
+                            <div class="col-50">
+                              <label for="zip">Código Postal</label>
+                              <input type="text" id="zip" name="zip" placeholder="3000-100">
+                            </div>
+                          </div>
+                        </div>
+              
+                        <div class="col-50">
+                          <h3>Pagamento</h3>
+                          <!--<label for="fname">Accepted Cards</label>
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                          </div><!-->
+                          <label for="cname">Nome do Cartão</label>
+                          <input type="text" id="cname" name="cardname" placeholder="João Félix">
+                          <label for="ccnum">Número do Cartão</label>
+                          <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                          <label for="expmonth">Data de Expiração</label>
+                          <input type="text" id="expmonth" name="expmonth" placeholder="08/25">
+              
+                            <div class="col-50">
+                              <label for="cvv">CVV</label>
+                              <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Endereço de Entrega igual ao de Faturação?
+                      </label>
+                      <input type="submit" value="Continue to checkout" class="btn">
+                    </form>
+                  </div>
+                </div>
+              
+                <div class="col-25">
+                  <div class="container">
+                    <h4>Carrinho
+                      <span class="price" style="color:black">
+                        <i class="fa fa-shopping-cart"></i>
+                        <b></b>
+                      </span>
+                    </h4>
+                    <p>Total: <span id="totalAmount"></span></p>
+                  </div>
+                </div>
+              </div> 
+        </div>
+    </section>
+    <!-- end why section -->
+    <!-- footer section -->
+    <footer class="footer_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Contacta-nos:
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    1600 Pennsylvania Avenue, N.W.
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    +1 (855) 444-8888
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    cake4you@f4e.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="index.html" class="footer-logo">
+                            Cake4You
+                        </a>
+                        <p>
+                            Descubra a doçura dos momentos especiais conosco. Faça parte da nossa história açucarada!
+                        </p>
+                        <div class="footer_social">
+                            <a href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="map_container">
+                        <div class="map">
+                            <div id="googleMap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="col-lg-7 mx-auto px-0">
+                    <p>
+                        &copy; <span id="displayYear"></span> Todos os direitos reservados por Food4Everyone
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <script>
+        // Function to get URL parameter by name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Retrieve the total amount from the URL parameter
+        var totalAmount = getParameterByName('total');
+
+        // Display the total amount on the page
+        var totalAmountElement = document.getElementById('totalAmount');
+        totalAmountElement.textContent = totalAmount ? '€' + totalAmount : 'N/A';
+    </script>
+    <script>
+        function myFunction() {
+            alert("Não Disponivel!");
+        }
+    </script>
+</body>
+</html>
