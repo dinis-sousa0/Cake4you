@@ -4,9 +4,9 @@ function UserProfileViewModel() {
 
     // Observable properties for binding
     self.user = ko.observable({
-        fullName: "Moussa Marega",
-        location: "R. José Fernandes Guerreiro 56, Faro, Portugal",
-        avatar: "https://img.a.transfermarkt.technology/portrait/big/283130-1681408284.jpg?lm=1"
+        fullName: ko.observable(""),
+        location: ko.observable(""),
+        avatar: ko.observable("")
         // Add more user properties as needed
     });
 
@@ -59,6 +59,17 @@ function UserProfileViewModel() {
         },
         // Add more forum card objects as needed
     ]);
+
+    // Load data from JSON file using AJAX
+    $.getJSON('js/dadosperfis.json', function (data) {
+        // Assuming the JSON file contains an array of user objects
+        if (data && data.length > 0) {
+            var firstUser = data[0]; // Asssuming you want to use the first user in the JSON array
+            self.user().fullName(firstUser.fullName);
+            self.user().location(firstUser.location);
+            self.user().avatar(firstUser.avatar);
+        }
+    });
 
 }
 

@@ -20,7 +20,8 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-    <link href="css/alerta.css" rel="stylesheet"/>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body class="sub_page">
     <div class="hero_area">
@@ -38,7 +39,7 @@
                                 <a class="nav-link borda-soft" href="mycake4you.html">MyCake4You</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link borda-soft" href="#" onclick="myFunction()">YourCake4You</a>
+                                <a class="nav-link borda-soft" href="#" onclick="showYourCake4YouModal()">YourCake4You</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link borda-soft" href="cake4us.html">Cake4Us</a>
@@ -89,6 +90,13 @@
         </div>
     </section>
     <!-- end why section -->
+    <!-- Include the YourCake4You modal -->
+    <div id="yourCake4YouModalContainer"></div>
+    <script>
+        $(function(){
+            $("#yourCake4YouModalContainer").load("yourcake4you.html");
+        });
+    </script>
     <!-- footer section -->
     <footer class="footer_section gradient" style="box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
         <div class="container">
@@ -165,18 +173,11 @@
         </div>
     </footer>
     <!-- footer section -->
-    <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
     <!-- bootstrap js -->
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <script>
-        function myFunction() {
-            alert("Não Disponivel!");
-        }
-    </script>
 </body>
 </html>
