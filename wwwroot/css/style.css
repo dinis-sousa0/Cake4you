@@ -1247,3 +1247,8 @@ form input[type="submit"]:focus {
 .card-title {
   margin-bottom: 0.5rem
 }
+
+.gradient {
+  background: rgb(68,0,101);
+  background: linear-gradient(135deg, rgba(68,0,101,1) 0%, rgba(232,61,149,1) 100%);
+}
