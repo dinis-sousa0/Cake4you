@@ -20,50 +20,14 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-    <style>
-        .card-img-top {
-            width: 100%;
-            height: 15vw;
-            object-fit: cover;
-        }
-
-        .btn-primary {
-            color: #fff;
-            background-color: #E83D95;
-            border-color: #E83D95;
-        }
-
-        .btn {
-            border-radius: 0.8rem;
-        }
-
-        .inner-main-header .row {
-            display: flex;
-            align-items: center;
-        }
-
-        .inner-main-header select,
-        .inner-main-header input {
-            margin-bottom: 0;
-        }
-
-        .page-item.active .page-link {
-            background-color: #E83D95;
-            border-color: #E83D95;
-        }
-
-        .page-link {
-            color: #E83D95
-        }
-    </style>
 </head>
    <body class="sub_page">
       <div class="hero_area">
          <!-- header section strats -->
-         <header class="header_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 2px rgba(0,0,0,.8);">
+         <header class="header_section gradient" style="box-shadow: 0px 5px 50px 2px rgba(0,0,0,.8);">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/cake4you.png" alt="#" /></a>
+                  <a class="navbar-brand" href="index.html"><img width="250" src="images/cake4you-t.png" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
@@ -73,7 +37,7 @@
                            <a class="nav-link borda-soft" href="mycake4you.html">MyCake4You</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link borda-soft" href="#" onclick="myFunction()">YourCake4You</a>
+                           <a class="nav-link borda-soft" href="#" onclick="showYourCake4YouModal()">YourCake4You</a>
                         </li>
                         <li class="nav-item active">
                            <a class="nav-link borda-soft" href="cake4us.html">Cake4Us</a>
@@ -369,8 +333,10 @@
           </div>
       </section>
       <!-- end why section -->
+      <!-- Include the YourCake4You modal -->
+      <div id="yourCake4YouModalContainer"></div>
       <!-- footer section -->
-      <footer class="footer_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
+      <footer class="footer_section gradient" style="box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
          <div class="container">
             <div class="row">
                <div class="col-md-4 footer-col">
@@ -487,14 +453,14 @@
             document.getElementById("threadContent").value = "";
         }
     </script>
-    
-      <!-- custom js -->
-      <script src="js/custom.js"></script>
-      <script>
-          function myFunction() {
-              alert("Não Disponivel!");
-          }
-      </script>
-      <script src="js/pesquisaforum.js"></script>
+
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <script>
+        $(function(){
+            $("#yourCake4YouModalContainer").load("yourcake4you.html");
+        });
+    </script>
+    <script src="js/pesquisaforum.js"></script>
    </body>
 </html>

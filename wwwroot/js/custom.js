@@ -45,7 +45,7 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-// função do alerta
-function myFunction() {
-    alert("Não Disponivel!");
+// função do modal do yc4y
+function showYourCake4YouModal() {
+    $('#yourCake4YouModal').modal('show');
 }
