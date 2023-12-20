@@ -1207,3 +1207,43 @@ form input[type="submit"]:focus {
 .bg-primary {
   background-color: #E83D95 !important;
 }
+
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #E83D95;
+  border-color: #E83D95;
+}
+
+.btn {
+  border-radius: 0.8rem;
+}
+
+.inner-main-header .row {
+  display: flex;
+  align-items: center;
+}
+
+.inner-main-header select,
+.inner-main-header input {
+  margin-bottom: 0;
+}
+
+.page-item.active .page-link {
+  background-color: #E83D95;
+  border-color: #E83D95;
+}
+
+.page-link {
+  color: #E83D95
+}
+
+.card-title {
+  margin-bottom: 0.5rem
+}

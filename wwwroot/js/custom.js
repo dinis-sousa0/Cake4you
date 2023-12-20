@@ -44,3 +44,8 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+// função do alerta
+function myFunction() {
+    alert("Não Disponivel!");
+}

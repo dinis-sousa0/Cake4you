@@ -21,23 +21,8 @@
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
     <link href="css/alerta.css" rel="stylesheet" />
-    <style>
-        .card-img-top {
-            width: 100%;
-            height: 15vw;
-            object-fit: cover;
-        }
-
-        .btn-primary {
-            color: #fff;
-            background-color: #E83D95;
-            border-color: #E83D95;
-        }
-
-        .btn {
-            border-radius: 0.8rem;
-        }
-    </style>
+    <!--script do knockout.js-->
+    <script src="js/knockout-3.5.1.js"></script>
 </head>
 <body class="sub_page">
     <div class="hero_area">
@@ -70,13 +55,13 @@
         </header>
         <!-- end header section -->
     </div>
-    <!-- why section -->
-    <section class="why_section layout_padding" style="background-color: #FFF0F2">
+    <!-- perfil section -->
+    <section class="why_section layout_padding" style="background-color: #FFF0F2" data-bind="with: user">
         <div class="container-fluid" style="width:75%">
             <div class="row">
                 <div class="col-lg-10">
-                    <h3 style="color: #453A29; margin-bottom: 30px; text-align:left; font-size:3.5rem">
-                        Perfil de Moussa Marega
+                    <h3 style="color: #453A29; margin-bottom: 30px; text-align:left; font-size:3.5rem">Perfil de 
+                        <span data-bind="text: fullName"></span>
                     </h3>
                 </div>
             </div>
@@ -88,35 +73,43 @@
                     </label>
                     <input type="file" id="avatar-input" style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;" accept="image/*" onchange="handleFileSelect(this)">
                 </div>                   
-                <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;">Moussa Marega</h3>
+                <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;" data-bind="text: fullName"></h3>
                 <a href="#" id="editUsername">
                 </a>
                 <!-- Adicione o campo de entrada oculto -->
                 <input type="text" id="editUsernameInput" style="display:none;">
             </div>
             <div class="row" style="align-items:center; padding-top:10px; padding-bottom:0px;padding-left:10px;">
-                <h4>Localização: R. José Fernandes Guerreiro 56, Faro, Portugal</h4>
+                <h4>Localização: <span data-bind="text: location"></span></h4>
             </div>
             <hr />
             <div class="container-fluid" style="padding-top:25px;">
                 <div class="row">
                     <h3>Catálogo</h3>
                 </div>
+                <!-- card section -->
                 <div class="row" style="color:slategrey;">
-                    <div class="card mr-5 mb-5 cake-card" data-price-min="37.20" data-price-max="37.20" data-rating="6" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 106, 0, 0.8); border: 2px solid rgba(255, 106, 0, 0.5);">
-                        <img class="card-img-top" src="images/cenoura-chocolate.webp" alt="Bolo de Cenoura com Chocolate">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Bolo de Cenoura com Chocolate</h5>
-                            <h6 class="card-title">Preço: 37.20€</h6>
-                            <p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </p>
-                            <p class="card-text">O bolo de cenoura com chocolate é um carinho em cada pedaço. Massa úmida, sabor de cenoura e chocolate, e a cobertura deliciosa.</p>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Cenoura com Chocolate" data-price="37.20">Adicionar ao Carrinho</a>
-                        </div>
-                    </div>
+                    <!-- ko if: cardData -->
+                        <!-- ko if: cardData().title -->
+                            <div class="card mr-5 mb-5 cake-card" data-price-min="37.20" data-price-max="37.20" data-rating="6" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 106, 0, 0.8); border: 2px solid rgba(255, 106, 0, 0.5);">
+                                <img class="card-img-top" data-bind="attr: { src: cardData().imageSrc, alt: cardData().title }" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" data-bind="text: cardData().title"></h5>
+                                    <h6 class="card-title" data-bind="text: 'Preço: ' + cardData().price + '€'"></h6>
+                                    <p>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </p>
+                                    <p class="card-text" data-bind="text: cardData().description"></p>
+                                    <a href="#" class="btn btn-primary mt-1 add-to-cart" data-bind="attr: { 'data-name': cardData().title, 'data-price': cardData().price }">Adicionar ao Carrinho</a>
+                                </div>
+                            </div>
+                        <!-- /ko -->
+                        <!-- ko ifnot: cardData().title -->
+                            <p>Não há dados disponíveis para o card.</p>
+                        <!-- /ko -->
+                    <!-- /ko -->
                 </div>
                 <div class="row">
                     <h3>Posts no fórum</h3>
@@ -150,7 +143,7 @@
             </div>
         </div>
     </section>
-    <!-- end why section -->
+    <!-- perfil section -->
     <!-- footer section -->
     <footer class="footer_section" style="background-color: #E83D95; box-shadow: 0px 5px 50px 5px rgba(0,0,0,.8);">
         <div class="container">
@@ -227,6 +220,7 @@
         </div>
     </footer>
     <!-- footer section -->
+    <script src="js/perfilutilizadores.js"></script>
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
@@ -235,10 +229,6 @@
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <script>
-        function myFunction() {
-            alert("Não Disponivel!");
-        }
-    </script>
+    <!--ko perfil-->
 </body>
 </html>
