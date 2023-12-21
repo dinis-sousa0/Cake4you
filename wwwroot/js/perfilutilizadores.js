@@ -64,28 +64,28 @@ function UserProfileViewModel() {
         }
     });
     
-        // StarRating function
-        self.starRating = function (rating) {
-            console.log("Rating:", rating); // Log the rating
-            var fullStars = Math.floor(rating / 2);
-            var halfStar = rating % 2 === 1;
+    // StarRating function
+    self.starRating = function (rating) {
+        console.log("Rating:", rating); // Log the rating
+        var fullStars = Math.floor(rating / 2);
+        var halfStar = rating % 2 === 1;
 
-            var stars = [];
-            for (var i = 0; i < fullStars; i++) {
-                stars.push("fa fa-star checked");
-            }
+        var stars = [];
+        for (var i = 0; i < fullStars; i++) {
+            stars.push("fa fa-star checked");
+        }
 
-            if (halfStar) {
-                stars.push("fa fa-star-half checked");
-            }
+        if (halfStar) {
+            stars.push("fa fa-star-half checked");
+        }
 
-            // Fill the remaining stars with unchecked stars
-            for (var i = stars.length; i < 5; i++) {
-                stars.push("fa fa-star");
-            }
+        // Fill the remaining stars with unchecked stars
+        for (var i = stars.length; i < 5; i++) {
+            stars.push("fa fa-star");
+        }
 
-            return stars;
-        };
+        return stars;
+    };
 
 }
 
