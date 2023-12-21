@@ -1,8 +1,43 @@
 [
     {
         "title": "Bolo de Cenoura com Chocolate", 
-        "price": "37.20",
-        "rating": "6",
+        "price": 37.20,
+        "rating": 6,
+        "imageSrc": "images/cenoura-chocolate.webp",
+        "description":"O bolo de cenoura com chocolate é um carinho em cada pedaço. Massa úmida, sabor de cenoura e chocolate, e a cobertura deliciosa."
+    },
+    {
+        "title": "Bolo de Limão Siciliano", 
+        "price": 9.80,
+        "rating": 7,
+        "imageSrc": "images/limao.jpeg",
+        "description":"O bolo de limão siciliano é uma combinação leve e cítrica. A massa tem o toque refrescante do limão, e a cobertura completa a experiência. Uma opção deliciosa para quem aprecia sabores frescos."
+    },
+    {
+        "title": "Bolo de Coco Cremoso", 
+        "price": 7.90,
+        "rating": 7,
+        "imageSrc": "images/coco-cremoso.webp",
+        "description":"O bolo de coco cremoso é uma opção tropical deliciosa. A massa, com seu toque de coco, oferece uma textura suave. Cada pedaço é uma experiência de sabor tropical."
+    },
+    {
+        "title": "Red Velvet", 
+        "price": 52.10,
+        "rating": 9,
+        "imageSrc": "images/red-velvet.jpg",
+        "description":"Uma massa aveludada, um toque de cacau e o vermelho que é puro encanto. A cobertura de cream cheese? O abraço final, doce e perfeito. Eu sou o Red Velvet, a celebração em cada mordida."
+    },
+    {
+        "title": "Encanto de Chocolate Nebuloso", 
+        "price": 34.50,
+        "rating": 10,
+        "imageSrc": "images/chocolate.jpg",
+        "description":"Este bolo é uma experiência celestial. A massa, rica em mistério de chocolate, oferece uma deliciosa jornada. Cada mordida é uma viagem pelas nuvens de sabor, e a cobertura completa a experiência com doçura irresistível."
+    },
+    {
+        "title": "Éxtase de Maracujá Dourado", 
+        "price": 68.85,
+        "rating": 9,
         "imageSrc": "images/cenoura-chocolate.webp",
         "description":"O bolo de cenoura com chocolate é um carinho em cada pedaço. Massa úmida, sabor de cenoura e chocolate, e a cobertura deliciosa."
     }
