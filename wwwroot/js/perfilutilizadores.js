@@ -32,10 +32,21 @@ function UserProfileViewModel() {
     ]);
 
     // Load profile data from JSON file using AJAX
+
+    // Get the index from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var index = urlParams.get('index');
+
+    // If index is not in the URL, try to get it from local storage
+    if (!index) {
+        index = localStorage.getItem('index');
+    }
+
+
     $.getJSON('js/dadosperfis.json', function (data) {
         // Assuming the JSON file contains an array of user objects
         if (data && data.length > 0) {
-            var firstUser = data[0]; // Asssuming you want to use the first user in the JSON array
+            var firstUser = data[index]; // Asssuming you want to use the first user in the JSON array
             self.user().fullName(firstUser.fullName);
             self.user().location(firstUser.location);
             self.user().avatar(firstUser.avatar);
@@ -49,8 +60,8 @@ function UserProfileViewModel() {
             data.forEach(function (cake) {
                 console.log('Processing cake:', cake);
             // Convert price and rating from strings to numbers
-            var price = parseFloat(cake.price);
-            var rating = parseInt(cake.rating);
+            let price = parseFloat(cake.price);
+            let rating = parseInt(cake.rating);
 
                 self.cardDataArray.push({
                     title: ko.observable(cake.title),
@@ -67,11 +78,11 @@ function UserProfileViewModel() {
     // StarRating function
     self.starRating = function (rating) {
         console.log("Rating:", rating); // Log the rating
-        var fullStars = Math.floor(rating / 2);
-        var halfStar = rating % 2 === 1;
+        let fullStars = Math.floor(rating / 2);
+        let halfStar = rating % 2 === 1;
 
-        var stars = [];
-        for (var i = 0; i < fullStars; i++) {
+        let stars = [];
+        for (let i = 0; i < fullStars; i++) {
             stars.push("fa fa-star checked");
         }
 
@@ -80,7 +91,7 @@ function UserProfileViewModel() {
         }
 
         // Fill the remaining stars with unchecked stars
-        for (var i = stars.length; i < 5; i++) {
+        for (let i = stars.length; i < 5; i++) {
             stars.push("fa fa-star");
         }
 

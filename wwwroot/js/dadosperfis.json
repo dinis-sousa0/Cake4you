@@ -1,5 +1,10 @@
 [
     {
+        "fullName": "Cliente Modelo 1",
+        "avatar": "https://bootdey.com/img/Content/avatar/avatar1.png",
+        "location": "R. de Sá, Aveiro, Portugal"
+    },
+    {
         "fullName": "Moussa Marega",
         "avatar": "https://img.a.transfermarkt.technology/portrait/big/283130-1681408284.jpg?lm=1",
         "location": "R. José Fernandes Guerreiro 56, Faro, Portugal"
@@ -8,6 +13,26 @@
         "fullName": "Artur Ramalho",
         "avatar": "https://bootdey.com/img/Content/avatar/avatar1.png",
         "location": ""
+    },
+    {
+        "fullName": "Raquel Elisângela",
+        "avatar": "https://bootdey.com/img/Content/avatar/avatar1.png",
+        "location": "R. José Fernandes Guerreiro 56, Faro, Portugal"
+    },
+    {
+        "fullName": "Eden Hazard",
+        "avatar": "https://img.a.transfermarkt.technology/portrait/originals/50202-1665067742.jpg?lm=1",
+        "location": "R. José Fernandes Guerreiro 56, Faro, Portugal"
+    },
+    {
+        "fullName": "Thierry Henry",
+        "avatar": "https://img.a.transfermarkt.technology/portrait/big/48805-1583614699.jpg?lm=1",
+        "location": "R. José Fernandes Guerreiro 56, Faro, Portugal"
+    },
+    {
+        "fullName": "Robin van Persie",
+        "avatar": "https://img.a.transfermarkt.technology/portrait/big/4380-1401971445.jpg?lm=1",
+        "location": "R. José Fernandes Guerreiro 56, Faro, Portugal"
     }
     
 ]

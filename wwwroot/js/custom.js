@@ -21,3 +21,17 @@ function myMap() {
 function showYourCake4YouModal() {
     $('#yourCake4YouModal').modal('show');
 }
+
+
+// função para carregar outros perfis
+function goToProfile(index) {
+    // Store the index in the URL as a parameter
+    window.location.href = "perfilmarega.html?index=" + index;
+}
+
+// função para carrregar perfil próprio
+function goToMyProfile(index) {
+    // Store the index in the session storage
+    localStorage.setItem('index', index);
+    window.location.href = "perfil.html";
+}

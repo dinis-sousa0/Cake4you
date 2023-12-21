@@ -45,3 +45,4 @@ document.getElementById('editLocationInput').addEventListener('blur', function (
     usernameElement.style.display = 'inline-block';
     usernameInput.style.display = 'none';
 });
+

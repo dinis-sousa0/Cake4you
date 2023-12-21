@@ -20,7 +20,6 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-    <link href="css/alerta.css" rel="stylesheet" />
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!--script do knockout.js-->
@@ -58,7 +57,7 @@
         <!-- end header section -->
     </div>
     <!-- why section -->
-    <section class="why_section layout_padding" style="background-color: #FFF0F2">
+    <section class="why_section layout_padding" style="background-color: #FFF0F2" data-bind="with: user">
         <div class="container-fluid" style="width:75%">
             <div class="row">
                 <div class="col-lg-10">
@@ -74,12 +73,14 @@
             <div class="row" style="align-items:center; padding-bottom:10px;padding-left:10px;">
                 <div id="avatar-container" style="position: relative; cursor: pointer;">
                     <label for="avatar-input" id="avatar-label">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150" height="150" alt="User" id="avatar-image" style="object-fit: cover;">
+                        <img data-bind="attr: { src: $data.avatar }" class="rounded-circle" width="150" height="150" alt="User" id="avatar-image" style="object-fit: cover;">
                     </label>
                     <input type="file" id="avatar-input" style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;" accept="image/*" onchange="handleFileSelect(this)">
                     <span id="change-avatar-text">Mudar Imagem</span>
                 </div>                   
-                <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;">Cliente Modelo 1</h3>
+                <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;">
+                    <span data-bind="text: fullName"></span>
+                </h3>
                 <a href="#" id="editUsername">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -90,7 +91,7 @@
                 <input type="text" id="editUsernameInput" style="display:none;">
             </div>
             <div class="row" style="align-items:center; padding-top:10px; padding-bottom:0px;padding-left:10px;">
-                <h4 style="text-align: right; margin-left:20px; margin-right:40px;">Localização:  <span id="Location"> R. de Sá, Aveiro, Portugal</span></h4>
+                <h4 style="text-align: right; margin-left:20px; margin-right:40px;">Localização:  <span data-bind="text: location" id="Location"></span></h4>
                 <a href="#" id="editLocation">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -206,6 +207,10 @@
         </div>
     </footer>
     <!-- footer section -->
+    <script src="js/perfilutilizadores.js"></script>
+    <script>
+        let index = localStorage.getItem('index');
+    </script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
     <!-- bootstrap js -->
