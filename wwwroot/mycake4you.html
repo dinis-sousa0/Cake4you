@@ -24,6 +24,25 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!--script do knockout.js-->
     <script src="js/knockout-3.5.1.js"></script>
+    <style>
+        .newButton {
+            position:fixed;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            right: 50px;
+            bottom: 50px;
+            border: 1px solid pink;
+        }
+        .cartBadge {
+            position: fixed;
+            bottom: 250px;
+            right: 60px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px
+        }
+    </style>
 </head>
 <body class="sub_page">
     <div class="hero_area">
@@ -47,13 +66,7 @@
                                 <a class="nav-link borda-soft" href="cake4us.html">Cake4Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link borda-soft" href="perfil.html" id="profileLink" >Perfil</a>
-                            </li>
-                            <li class="nav-item" id="cartNavItem">
-                                <button class="btn btn-primary" style="background-color: transparent; border-color: transparent; font-family: Source Serif Pro;" type="button" data-toggle="modal" data-target="#cartModal">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span id="cartCounter" class="badge badge-danger">0</span> <!-- Counter element -->
-                                </button>
+                                <a class="nav-link borda-soft" href="perfil.html" id="profileLink">Perfil</a>
                             </li>
                         </ul>
                     </div>
@@ -139,7 +152,7 @@
                                 <img src="https://img.a.transfermarkt.technology/portrait/big/283130-1681408284.jpg?lm=1" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px" onclick="goToProfile(1)"><a style="color:#0c0c0c" href="#">Moussa Marega</a></h6>
                             </div>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Cenoura com Chocolate" data-price="37.20">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Cenoura com Chocolate" data-price="37.20" onclick="logado()">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                     <div class="card mr-5 mb-5 cake-card" data-price-min="9.80" data-price-max="9.80" data-rating="7" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgb(255, 216, 0, 0.8); border: 2px solid rgba(255, 216, 0, 0.5);">
@@ -158,7 +171,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px" onclick="goToProfile(3)"><a style="color:#0c0c0c" href="#">Raquel Elisângela</a></h6>
                             </div>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Limão Siciliano" data-price="9.80">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Limão Siciliano" data-price="9.80" onclick="logado()">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                     <div class="card mr-5 mb-5 cake-card" data-price-min="7.90" data-price-max="7.90" data-rating="7" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(146, 100, 56, 0.8); border: 2px solid rgba(146, 100, 56,0.5);">
@@ -177,7 +190,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px" onclick="goToProfile(4)"><a style="color:#0c0c0c" href="#">Geisa Silvestre</a></h6>
                             </div>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Coco Cremoso" data-price="7.90">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Bolo de Coco Cremoso" data-price="7.90" onclick="logado()">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                     <div class="card mr-5 mb-5 cake-card" data-price-min="34.50" data-price-max="34.50" data-rating="10" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(65, 25, 0, 0.8); border: 2px solid rgba(65, 25, 0,0.6);">
@@ -197,7 +210,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px" onclick="goToProfile(5)"><a style="color:#0c0c0c" href="#">António José</a></h6>
                             </div>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Encanto de Chocolate Nebuloso" data-price="34.50">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Encanto de Chocolate Nebuloso" data-price="34.50" onclick="logado()">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                     <div class="card mr-5 mb-5 cake-card" data-price-min="39.20" data-price-max="90.50" data-rating="9" style="width: 18rem; box-shadow: 0px 0px 30px 0px rgba(144, 120, 150, 0.8); border: 2px solid rgba(144, 120, 150,0.6); ">
@@ -217,7 +230,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                                 <h6 style="text-align: right;margin-left:10px; margin-right:20px" onclick="goToProfile(6)"><a style="color:#0c0c0c" href="#">Joaquina Antunes</a></h6>
                             </div>
-                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Éxtase de Maracujá Dourado" data-price="39.20">Adicionar ao Carrinho</a>
+                            <a href="#" class="btn btn-primary mt-1 add-to-cart" data-name="Éxtase de Maracujá Dourado" data-price="39.20" onclick="logado()">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                 </div>
@@ -345,6 +358,54 @@
             </div>
         </div>
     </footer>
+    <!--Buttons-->
+    <div id="cartButton">
+        <button class="btn btn-primary newButton align-content-center" style="font-family: Source Serif Pro; bottom: 170px;" type="button" data-toggle="modal" data-target="#cartModal">
+            <i class="fa-solid fa-cart-shopping" style="height: 50px; width: 50px;"></i>
+        </button>
+        <div id="cartCounter" class="badge badge-danger cartBadge align-items-center d-flex justify-content-center">0</div> <!-- Counter element -->
+    </div>
+    <div id="addCake">
+        <button class="btn btn-primary has-icon newButton" type="button" data-toggle="modal" data-target="#threadModal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="newButton" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
+                <line x1="7" y1="12" x2="17" y2="12"></line>
+                <line x1="12" y1="7" x2="12" y2="17"></line>
+            </svg>
+        </button>
+    </div>
+    <!-- New Thread Modal -->
+    <div class="modal fade" id="threadModal" tabindex="-1" role="dialog" aria-labelledby="threadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form id="newThreadForm">
+                    <div class="modal-header d-flex align-items-center bg-primary text-white">
+                        <h6 class="modal-title mb-0" id="threadModalLabel">Put your cake in the market</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="threadTitle">Nome</label>
+                            <input type="text" class="form-control" id="threadName" placeholder="Enter name" autofocus="" />
+                            <lable for="theradPrice">Preço</lable>
+                            <input type="text" class="form-control" id="threadPrice" placeholder="Enter name" autofocus="" />
+                            <label for="threadDescription">Descrição</label>
+                            <textarea class="form-control summernote" id="threadDescription" placeholder="Enter Description"></textarea>
+                            <div class="custom-file form-control-sm mt-3" style="max-width: 300px;">
+                                <input type="file" class="custom-file-input" id="image" multiple="" />
+                                <label class="custom-file-label" for="theradImage">Foto do bolo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="submitForm()">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- footer section -->
     <script src="js/dadosperfis.json"></script>
     <!-- popper js -->
@@ -358,6 +419,8 @@
     <script src="js/carrinho.js"></script>
     <script src="js/ordernarbolos.js"></script>
     <script src="js/pesquisabolos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/loginCheck.js"></script>
     <script>
         function redirectToCheckout() {
             // Get the total price from the total price element
@@ -369,21 +432,23 @@
         }
         function logado() {
             if (localStorage.getItem('userLoggedIn') === 'false') {
+                alert('Efetue Log In para utilizar o carrinho')
                 return false;
             }
             return true;
         }
-        function updateCartVisibility() {
-            var cartNavItem = document.getElementById('cartNavItem');
+        function updateVisibility() {
+            var cartNavItem = document.getElementById('cartButton');
+            var addCakeButton = document.getElementById('addCake');
             if (localStorage.getItem('userLoggedIn') === 'true') {
                 cartNavItem.style.display = 'block'; // Show the cartNavItem
+                addCakeButton.style.display = 'block';
             } else {
                 cartNavItem.style.display = 'none';  // Hide the cartNavItem
+                addCakeButton.style.display = 'none';
             }
         }
-        updateCartVisibility();
+        updateVisibility();
     </script>
-    <script src="js/carrinho.js"></script>
-    <script src="js/loginCheck.js"></script>
 </body>
 </html>

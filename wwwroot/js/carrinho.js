@@ -83,3 +83,46 @@ $(document).ready(function () {
         return totalPrice;
     }
 });
+
+function submitForm() {
+    // Get form values
+    var threadName = document.getElementById("threadName").value;
+    var threadPrice = document.getElementById("threadPrice").value;
+    var threadDescription = document.getElementById("threadDescription").value;
+    var threadImage = document.getElementById("image").value;
+
+    // Create a new post element
+    var newPost = document.createElement("div");
+    newPost.className = "card mr-5 mb-5 cake-card";
+    newPost.innerHTML = `
+             <img class="card-img-top" src="${threadImage}" alt="Imagem do Bolo">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${threadName}</h5>
+                    <h6 class="card-title">Preço: ${threadPrice}€</h6 >
+                    <p>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </p>
+                    <p class="card-text">${threadDescription}</p >
+                    <div class="row mt-auto" style="align-items:center; padding-bottom:10px;padding-left:10px">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
+                        <h6 style="text-align: right;margin-left:10px; margin-right:20px"><a style="color:#0c0c0c" href="perfil.html">Tu</a></h6>
+                    </div> 
+                </div>
+           `;
+
+    // Append the new post to the container
+    var container = document.getElementById("forumPosts");
+    var firstChild = container.firstChild;
+
+    container.insertBefore(newPost, firstChild);
+
+    // Optional: Clear the form fields
+    document.getElementById("threadName").value = '',
+    document.getElementById("threadPrice").value = '',
+        document.getElementById("threadDescription").value = '';
+    document.getElementById("image").value = '';
+}
