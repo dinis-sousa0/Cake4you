@@ -57,11 +57,11 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button id="loginButton">
+                        <a id="loginButton" href="index.html">
                             <div class="login100-form-btn">
                                 Criar Conta
                             </div>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="text-center p-t-90">
@@ -96,7 +96,6 @@
     <script>
         $('#loginButton').on('click', function () {
             localStorage.setItem('userLoggedIn', 'true');
-            window.location.href = 'index.html';
         });
     </script>
 </body>

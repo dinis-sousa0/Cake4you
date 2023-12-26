@@ -52,11 +52,11 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button id="loginButton">
-							<div class="login100-form-btn">
+						<a href="index.html">
+							<div class="login100-form-btn" id="loginButton">
 								Entrar
 							</div>
-						</button>
+						</a>
 					</div>
 
 					<div class="text-center p-t-90">
@@ -89,10 +89,9 @@
 <!--===============================================================================================-->
 	<script src="Login_v3/js/main.js"></script>
 	<script>
-		$('#loginButton').on('click', function () {
-			localStorage.setItem('userLoggedIn', 'true');
-			window.location.href = 'index.html';
-		});
+			$('#loginButton').on('click', function () {
+				localStorage.setItem('userLoggedIn', 'true');
+			});
 	</script>
 </body>
 </html>

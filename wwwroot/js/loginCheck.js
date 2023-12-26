@@ -12,17 +12,4 @@ function updateNavbar() {
     }
 }
 
-// Handle login button click event
-$('#loginButton').on('click', function () {
-    // Your login logic goes here
-
-    // For demonstration purposes, let's assume login is successful
-    localStorage.setItem('userLoggedIn', 'true');
-
-    // Update the navigation bar
-    updateNavbar();
-});
-
-
-// Initial update of the navigation bar
 updateNavbar();

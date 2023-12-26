@@ -62,7 +62,7 @@
                      <!-- Inner sidebar -->
                      <div class="inner-sidebar">
                          <!-- Inner sidebar header -->
-                         <div class="inner-sidebar-header justify-content-center">
+                         <div class="inner-sidebar-header justify-content-center" id="AddNew">
                              <button class="btn btn-primary has-icon btn-block" type="button" data-toggle="modal" data-target="#threadModal">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
                                      <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -464,6 +464,22 @@
        $(function(){
            $("#yourCake4YouModalContainer").load("yourcake4you.html");
        });
+
+       function logado() {
+           if (localStorage.getItem('userLoggedIn') === 'false') {
+               return false;
+           }
+           return true;
+       }
+       function updateAddVisibility() {
+           var NewPostButton = document.getElementById('AddNew');
+           if (localStorage.getItem('userLoggedIn') === 'true') {
+               NewPostButton.style.display = 'block'; // Show the cartNavItem
+           } else {
+               NewPostButton.style.display = 'none';  // Hide the cartNavItem
+           }
+       }
+       updateAddVisibility();
    </script>
    <script src="js/pesquisaforum.js"></script>
    <script src="js/loginCheck.js"></script>
