@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-75">
                     <div class="container">
-                        <form action="/action_page.php">
+                        <form>
 
                             <div class="row">
                                 <div class="col-50">
@@ -114,7 +114,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="submit" value="Continue to checkout" class="btn btn-success bg-success btn-lg float-right">
+                                    <a href="feedback.html" onclick="return validateForm()">
+                                        <div type="btn btn-sucess" class="btn btn-success bg-success btn-lg float-right">Continue to checkout</div>
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -213,7 +215,7 @@
     </footer>
     <!-- footer section -->
     <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js">onauxclick</script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
     <!-- bootstrap js -->

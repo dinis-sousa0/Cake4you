@@ -45,7 +45,7 @@
                           <a class="nav-link borda-soft" href="cake4us.html">Cake4Us</a>
                        </li>
                        <li class="nav-item">
-                          <a class="nav-link borda-soft" href="perfil.html">Perfil</a>
+                          <a class="nav-link borda-soft" id="profileLink" href="perfil.html">Perfil</a>
                        </li>
                     </ul>
                  </div>
@@ -315,17 +315,13 @@
                                      <div class="form-group">
                                          <label for="threadTitle">Title</label>
                                          <input type="text" class="form-control" id="threadTitle" placeholder="Enter title" autofocus="" />
-                                     </div>
-                                     <textarea class="form-control summernote" style="display: none;"></textarea>
-
-                                     <div class="custom-file form-control-sm mt-3" style="max-width: 300px;">
-                                         <input type="file" class="custom-file-input" id="customFile" multiple="" />
-                                         <label class="custom-file-label" for="customFile">Attachment</label>
+                                         <lable for="theradTitle">Content</lable>
+                                         <textarea class="form-control summernote" id="threadContent" placeholder="Enter content"></textarea>
                                      </div>
                                  </div>
                                  <div class="modal-footer">
                                      <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                                     <button type="button" class="btn btn-primary">Post</button>
+                                     <button type="button" class="btn btn-primary" onclick="submitForm()">Post</button>
                                  </div>
                              </form>
                          </div>
@@ -421,7 +417,8 @@
      <script src="js/popper.min.js"></script>
      <!-- bootstrap js -->
      <script src="js/bootstrap.js"></script>
-     <!--font-awesome-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--font-awesome-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
      <script>
        function submitForm() {
@@ -433,24 +430,27 @@
            var newPost = document.createElement("div");
            newPost.className = "card mb-2";
            newPost.innerHTML = `
-               <div class="card-body p-2 p-sm-3">
-                   <div class="media forum-item">
-                       <!-- Add your user avatar image here -->
-                       <div class="media-body">
-                           <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">${threadTitle}</a></h6>
-                           <p class="text-secondary">${threadContent}</p>
-                           <p class="text-muted"><a href="javascript:void(0)">YourUserName</a> respondeu <span class="text-secondary font-weight-bold">à 1 minuto</span></p>
-                       </div>
-                       <div class="text-muted small text-center align-self-center">
-                           <span class="d-none d-sm-inline-block"><i class="fa fa-eye"></i> 0</span>
-                           <span><i class="fa fa-comment ml-2"></i> 0</span>
-                       </div>
-                   </div>
-               </div>
+             <div class="card-body p-2 p-sm-3">
+                <div class="media forum-item">
+                    <a href="perfil.html" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                    <div class="media-body">
+                        <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">${threadTitle}</a></h6>
+                        <p class="text-secondary">${threadContent}</p>
+                        <p class="text-muted"><a href="javascript:void(0)">Tu</a> respondeste <span class="text-secondary font-weight-bold">agora mesmo</span></p>
+                    </div>
+                    <div class="text-muted small text-center align-self-center">
+                        <span class="d-none d-sm-inline-block"><i class="fa fa-eye"></i> 0</span>
+                        <span><i class="fa fa-comment ml-2"></i> 0</span>
+                    </div>
+                 </div>
+             </div>
            `;
    
            // Append the new post to the container
-           document.getElementById("forumPosts").appendChild(newPost);
+           var container = document.getElementById("forumPosts");
+           var firstChild = container.firstChild;
+
+           container.insertBefore(newPost, firstChild);
    
            // Optional: Clear the form fields
            document.getElementById("threadTitle").value = "";
@@ -466,5 +466,6 @@
        });
    </script>
    <script src="js/pesquisaforum.js"></script>
+   <script src="js/loginCheck.js"></script>
 </body>
 </html>

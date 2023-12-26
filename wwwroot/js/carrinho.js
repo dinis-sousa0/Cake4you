@@ -12,7 +12,6 @@ $(document).ready(function () {
 
         // Check if the item is already in the cart
         var existingItem = cart.find(item => item.name === itemName);
-
         if (existingItem) {
             // Increment the quantity if the item is already in the cart
             existingItem.quantity++;

@@ -11,19 +11,17 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/c4yicon.png" type="">
-    <title>Perfil Cake4You</title>
+    <title>Cake4You</title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <!-- font awesome style -->
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <!-- Custom styles for this template -->
+    <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!--script do knockout.js-->
-    <script src="js/knockout-3.5.1.js"></script>
 </head>
 <body class="sub_page">
     <div class="hero_area">
@@ -46,8 +44,8 @@
                             <li class="nav-item">
                                 <a class="nav-link borda-soft" href="cake4us.html">Cake4Us</a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link borda-soft" href="perfil.html">Perfil</a>
+                            <li class="nav-item">
+                                <a class="nav-link borda-soft" href="perfil.html" id="profileLink">Perfil</a>
                             </li>
                         </ul>
                     </div>
@@ -57,77 +55,14 @@
         <!-- end header section -->
     </div>
     <!-- why section -->
-    <section class="why_section layout_padding" style="background-color: #FFF0F2">
-        <div class="container-fluid" style="width:75%">
-            <div class="row">
-                <div class="col-lg-10">
-                    <h3 style="color: #453A29; margin-bottom: 30px; text-align:left; font-size:3.5rem">
-                        O que queres fazer?
-                    </h3>
-                </div>
-                <div class="col-lg-2">
-                    <a href="#" class="btn btn-primary mb-auto">Verificar Utilizador</a>
-                </div>
-                <div class="col-lg-2">
-                    <a href="index.html" id="logoutButton">
-                        <div class="btn btn-primary mb-auto">Log out</div>
-                    </a>
-                </div>
-            </div>
-            <hr />
-            <div class="row" style="align-items:center; padding-bottom:10px;padding-left:10px;">
-                <div id="avatar-container" style="position: relative; cursor: pointer;">
-                    <label for="avatar-input" id="avatar-label">
-                        <img data-bind="attr: { src: user().avatar }" class="rounded-circle" width="150" height="150" alt="User" id="avatar-image" style="object-fit: cover;">
-                    </label>
-                    <input type="file" id="avatar-input" style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;" accept="image/*" onchange="handleFileSelect(this)">
-                    <span id="change-avatar-text">Mudar Imagem</span>
-                </div>
-                <h3 id="username" style="text-align: right; margin-left:20px; margin-right:40px; font-size:3rem;">
-                    <span data-bind="text: user().fullName"></span>
-                </h3>
-                <a href="#" id="editUsername">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                    </svg>
-                </a>
-                <!-- Adicione o campo de entrada oculto -->
-                <input type="text" id="editUsernameInput" style="display:none;">
-            </div>
-            <div class="row" style="align-items:center; padding-top:10px; padding-bottom:0px;padding-left:10px;">
-                <h4 style="text-align: right; margin-left:20px; margin-right:40px;">Localização:  <span data-bind="text: user().location" id="Location"></span></h4>
-                <a href="#" id="editLocation">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                    </svg>
-                </a>
-                <input type="text" id="editLocationInput" style="display:none;">
-            </div>
-            <hr />
-            <div class="container-fluid" style="padding-top:25px;">
-                <div class="row">
-                    <h3>Catálogo</h3>
-                </div>
-                <div class="row" style="color:slategrey; padding-bottom:20px;">
-                    <h5>Verifica a tua conta para colocares bolos no catálogo</h5>
-                </div>
-                <div class="row">
-                    <h3>Posts no fórum</h3>
-                </div>
-                <div class="row" style="color:slategrey; padding-bottom:20px;">
-                    <h5>Ainda não fizestes post no fórum</h5>
-                </div>
-                <div class="row">
-                    <h3>Histórico de compras</h3>
-                </div>
-                <div class="row" style="color:slategrey; padding-bottom:20px;">
-                    <h5>Ainda não fizeste compras</h5>
-                </div>
-            </div>
+    <div class="card col-8 mt-5 d-flex mx-auto mb-5">
+        <div class="card-header" style="background-color:white;">
+            <h1 style="color:black;"><b>Obrigado pela sua compra!</b></h1>
         </div>
-    </section>
+        <div class="card-body text-center" style="font-size:larger">
+                Os confeiteiros foram informados da compra, será notificado quando esta estiver perparada e quando estiver prestes a chegar à sua localização!
+        </div>
+    </div>
     <!-- end why section -->
     <!-- Include the YourCake4You modal -->
     <div id="yourCake4YouModalContainer"></div>
@@ -212,28 +147,12 @@
         </div>
     </footer>
     <!-- footer section -->
-    <script>
-        let index = localStorage.getItem('index');
-    </script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
     <!-- bootstrap js -->
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <script src="js/avatar.js"></script>
-    <script src="js/editartexto.js"></script>
-    <script src="js/myProfile.js"></script>
-    <script>
-        $('#logoutButton').on('click', function () {
-            // Your logout logic goes here
-
-            // For demonstration purposes, let's assume logout is successful
-            localStorage.setItem('userLoggedIn', 'false');
-
-            // Update the navigation bar
-            updateNavbar();
-        });
-    </script>
+    <script src="js/loginCheck.js"></script>
 </body>
 </html>
