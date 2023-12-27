@@ -89,13 +89,23 @@ function submitForm() {
     var threadName = document.getElementById("threadName").value;
     var threadPrice = document.getElementById("threadPrice").value;
     var threadDescription = document.getElementById("threadDescription").value;
-    var threadImage = document.getElementById("image").value;
+    var threadImageInput = document.getElementById("image");
 
-    // Create a new post element
-    var newPost = document.createElement("div");
-    newPost.className = "card mr-5 mb-5 cake-card";
-    newPost.innerHTML = `
-             <img class="card-img-top" src="${threadImage}" alt="Imagem do Bolo">
+    if (threadImageInput.files.length > 0) {
+        var threadImage = threadImageInput.files[0];
+
+        // Use FileReader to read the file as data URL
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var threadImageURL = e.target.result;
+
+            // Create a new post element with the image URL
+            var newPost = document.createElement("div");
+            newPost.className = "card mr-5 mb-5 cake-card";
+            newPost.style = "width: 18rem; box-shadow: 0px 0px 30px 0px; border: 2px solid;"
+            newPost.innerHTML = `
+                    <img class="card-img-top" src="${threadImageURL}" alt="Imagem do Bolo">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">${threadName}</h5>
                     <h6 class="card-title">Preço: ${threadPrice}€</h6 >
@@ -110,19 +120,28 @@ function submitForm() {
                     <div class="row mt-auto" style="align-items:center; padding-bottom:10px;padding-left:10px">
                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="50" alt="User" />
                         <h6 style="text-align: right;margin-left:10px; margin-right:20px"><a style="color:#0c0c0c" href="perfil.html">Tu</a></h6>
-                    </div> 
+                    </div>
+                    <a href="#" class="btn btn-primary mt-1 add-to-cart" onclick="alert('este Bolo é teu')">Adicionar ao Carrinho</a>
                 </div>
            `;
 
-    // Append the new post to the container
-    var container = document.getElementById("forumPosts");
-    var firstChild = container.firstChild;
+            // Append the new post to the container
+            var container = document.getElementById("cakes");
+            var firstChild = container.firstChild;
 
-    container.insertBefore(newPost, firstChild);
+            container.insertBefore(newPost, firstChild);
+
+        };
+
+        // Read the file as data URL
+        reader.readAsDataURL(threadImage);
+    } else {
+        alert("Please select an image");
+    }
 
     // Optional: Clear the form fields
     document.getElementById("threadName").value = '',
     document.getElementById("threadPrice").value = '',
-        document.getElementById("threadDescription").value = '';
+    document.getElementById("threadDescription").value = '';
     document.getElementById("image").value = '';
 }
