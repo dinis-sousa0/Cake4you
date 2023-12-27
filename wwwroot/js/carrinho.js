@@ -91,7 +91,7 @@ function submitForm() {
     var threadDescription = document.getElementById("threadDescription").value;
     var threadImageInput = document.getElementById("image");
 
-    if (threadImageInput.files.length > 0) {
+    if (threadImageInput.files.length > 0 & threadName.length > 0 & threadPrice.length > 0 & threadDescription.length > 0) {
         var threadImage = threadImageInput.files[0];
 
         // Use FileReader to read the file as data URL
@@ -136,7 +136,7 @@ function submitForm() {
         // Read the file as data URL
         reader.readAsDataURL(threadImage);
     } else {
-        alert("Please select an image");
+        alert("Por favor preencha todos os campos");
     }
 
     // Optional: Clear the form fields
