@@ -1,3 +1,3 @@
 # Cake4You
 
-Boas, bolo é porreiro, ya, xau.
+Para implementar este website utilizámos o github pages, html, css, javascript, jquery, knockout e a localstorage.
